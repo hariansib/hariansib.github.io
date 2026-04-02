@@ -1,1 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Portal informasi dan rekomendasi UMKM Indonesia terbaik 2026. Temukan produk lokal, peluang usaha, dan inspirasi bisnis digital untuk pengembangan UKM Anda.">
+    <meta name="keywords" content="UMKM, UKM, bisnis kecil, produk lokal, usaha rumahan, peluang usaha 2026">
+    <meta name="author" content="Harian SIB">
+    <title>Harian SIB | Portal UMKM Indonesia 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #1a1a2e;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            border-radius: 30px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: #e94560;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e94560;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+        }
+
+        /* Navigasi */
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #0f3460;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav a:hover {
+            background: #e94560;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0f3460;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Kategori */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #0f3460;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #0f3460;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Daftar Artikel */
+        .list-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .list-card:hover {
+            background: #fef5f7;
+            transform: translateX(5px);
+        }
+
+        .list-info h4 {
+            font-size: 1.1rem;
+            color: #0f3460;
+            margin-bottom: 5px;
+        }
+
+        .list-info p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .list-date {
+            color: #e94560;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #0f3460;
+            color: white;
+            border-radius: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .header {
+                padding: 30px 15px 20px;
+            }
+            .logo {
+                font-size: 1.8rem;
+            }
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .hero {
+                padding: 25px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .list-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Harian<span>SIB</span></div>
+            <div class="tagline">Pusat Informasi & Inspirasi UMKM Indonesia</div>
+            <div class="badge">#UMKMNaikKelas 2026</div>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="nav">
+            <a href="#">Beranda</a>
+            <a href="#">Berita UMKM</a>
+            <a href="#">Inspirasi Bisnis</a>
+            <a href="#">Produk Lokal</a>
+            <a href="#">Event & Pelatihan</a>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Selamat Datang di Portal UMKM Harian SIB</h1>
+            <p>Menyajikan informasi terbaru seputar Usaha Mikro, Kecil, dan Menengah di Indonesia. Temukan peluang usaha, inspirasi produk lokal, dan tips mengembangkan bisnis digital di era 2026.</p>
+        </div>
+
+        <!-- Kategori Layanan -->
+        <h2 class="section-title">📋 Layanan Kami</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <h3>Berita & Tren</h3>
+                <p>Informasi terkini seputar kebijakan, peluang pasar, dan tren bisnis UMKM 2026.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>Inspirasi Usaha</h3>
+                <p>Ide bisnis kreatif dan strategi pemasaran digital untuk UMKM naik kelas.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛍️</div>
+                <h3>Direktori Produk</h3>
+                <p>Temukan produk lokal unggulan dari berbagai daerah di Indonesia.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Pelatihan & Event</h3>
+                <p>Webinar, workshop, dan event UMKM terbaru untuk mengembangkan skill.</p>
+            </div>
+        </div>
+
+        <!-- Artikel Terbaru -->
+        <h2 class="section-title">🔥 Artikel Populer</h2>
+        <div class="list-card">
+            <div class="list-info">
+                <h4>5 Strategi Digital Marketing untuk UMKM 2026</h4>
+                <p>Pelajari cara memanfaatkan media sosial dan marketplace untuk meningkatkan penjualan.</p>
+            </div>
+            <div class="list-date">15 Mar 2026</div>
+        </div>
+        <div class="list-card">
+            <div class="list-info">
+                <h4>Peluang Usaha Makanan Ringan Modal Kecil di 2026</h4>
+                <p>Ide bisnis camilan kekinian yang lagi tren dan cocok untuk pemula.</p>
+            </div>
+            <div class="list-date">12 Mar 2026</div>
+        </div>
+        <div class="list-card">
+            <div class="list-info">
+                <h4>Cara Mengurus NIB untuk UMKM Secara Online</h4>
+                <p>Panduan lengkap legalitas usaha melalui sistem OSS, mudah dan cepat.</p>
+            </div>
+            <div class="list-date">10 Mar 2026</div>
+        </div>
+        <div class="list-card">
+            <div class="list-info">
+                <h4>Tips Mengelola Keuangan UMKM Agar Tidak Boncos</h4>
+                <p>Manajemen kas, pemisahan keuangan pribadi dan usaha, serta cara mendapat modal.</p>
+            </div>
+            <div class="list-date">08 Mar 2026</div>
+        </div>
+        <div class="list-card">
+            <div class="list-info">
+                <h4>Branding Produk Lokal agar Laku di Pasar Nasional</h4>
+                <p>Strategi membangun merek yang kuat untuk produk UMKM Indonesia.</p>
+            </div>
+            <div class="list-date">05 Mar 2026</div>
+        </div>
+
+        <!-- Info Tambahan -->
+        <div class="grid" style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>UMKM Awards 2026</h3>
+                <p>Daftarkan usaha Anda untuk ajang apresiasi UMKM terbaik tahun ini.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Kolaborasi & Kemitraan</h3>
+                <p>Buka peluang kerjasama dengan investor dan mitra bisnis.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Harian SIB | Portal UMKM Indonesia</p>
+            <p>📍 Jl. Raya UMKM No. 123, Jakarta | 📧 info@hariansib.id</p>
+            <p>📱 Ikuti kami: <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">TikTok</a></p>
+        </div>
+    </div>
+</body>
+</html>
